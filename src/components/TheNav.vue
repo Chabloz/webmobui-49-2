@@ -1,6 +1,9 @@
 <script setup>
   import { ref } from 'vue';
-  import { page } from '../state.js';
+  import { page, tasks } from '../state.js';
+
+  import {useLocalstorage} from '../composables/localstorage.js';
+
 
   window.addEventListener('hashchange', () => {
     page.value = window.location.hash

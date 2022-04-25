@@ -18,9 +18,6 @@
     'update:modelValue'
   ]);
 
-  // const modelValue = ref(43);
-  // const symbol = '°C';
-
   const value = computed({
     get: () => round(props.modelValue, 2),
     set: val => emits('update:modelValue', val)
