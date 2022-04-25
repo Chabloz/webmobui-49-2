@@ -3,13 +3,10 @@
   import TheNav from './components/TheNav.vue';
   import {tasks} from './state.js';
 
-
-
-
   const { value: movies } = useLocalstorage('movies', []);
 
   function addTask() {
-    tasks.push('test');
+    tasks.value.push('test');
   }
 
 </script>
