@@ -4,7 +4,7 @@ export function useLocalstorage(key, defaultVal = null) {
 
   let data = localStorage.getItem(key);
 
-  // if not allready in localstorage
+  // if allready in localstorage
   if (data !== null) {
     // Deserialize JSON
     data = JSON.parse(data);
