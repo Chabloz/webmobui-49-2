@@ -4,14 +4,15 @@ export function useFetch(url) {
   const data = ref(null);
 
   async function loadJson() {
-    const res = await fetch(url);
+    const res = await fetch(url, {
+      credentials: 'include'
+    });
     const json = await res.json();
     data.value = json;
-
   }
 
-  loadJson()
+  loadJson();
 
-  return { data }
+  return { data, refetch: loadJson};
 
 }
