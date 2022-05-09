@@ -1,12 +1,13 @@
 <script setup>
   import { ref, computed, watchEffect } from 'vue';
-  import { useFetch } from './composables/fetch';
+  import { useFetch } from './composables/fetch.js';
+  import { useLocalstorage } from './composables/localstorage.js';
   import { apiLogin } from './config/chat.js';
   import TheChat from './components/TheChat.vue';
 
   const showError = ref(false);
   const isLogged = ref(false);
-  const username = ref('')
+  const {value: username} = useLocalstorage('username', '');
   const urlLogin = computed(() => apiLogin + username.value);
   const {data: resultLogin, fetchJson: doApiLogin} = useFetch(urlLogin);
 
