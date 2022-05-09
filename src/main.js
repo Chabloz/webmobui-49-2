@@ -1,7 +1,8 @@
 import { createApp } from 'vue';
-import App from './AppSchedule.vue';
+import App from './AppChat.vue';
 
-createApp(App).mount('#app')
+createApp(App).mount('#app');
+
 
 // import {ref, computed, watchEffect} from 'vue';
 
@@ -13,6 +14,5 @@ createApp(App).mount('#app')
 // })
 
 // watchEffect(() => console.log(y.value));
-
 
 // y.value = 4;
