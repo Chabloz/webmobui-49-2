@@ -3,9 +3,7 @@
   import { useFetch } from './composables/fetch.js';
   import TheNav from './components/TheNav.vue';
 
-
   const { data: schedules } = useFetch('https://chabloz.eu/files/horaires/all.json');
-
 
   const { data: result } = useFetch('https://chabloz.eu/ws/chat/user/login?user=Chabloz');
   const { data: messages } = useFetch('https://chabloz.eu/ws/chat/msg/get');

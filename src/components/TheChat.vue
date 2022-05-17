@@ -1,21 +1,15 @@
 <script setup>
-  import { onMounted, onUnmounted } from '@vue/runtime-core';
   import { useFetch } from '../composables/fetch';
   import { apiLogout } from '../config/chat.js';
+  import TheChatUsers from './chat/TheChatUsers.vue';
+  import TheChatAddForm from './chat/TheChatAddForm.vue';
+  import TheChatMessages from './chat/TheChatMessages.vue';
 
   const {data: resultLogout, fetchJson: doApiLogout} = useFetch(apiLogout);
 
   const emit = defineEmits([
     'logout'
   ]);
-
-  onMounted(() => {
-    console.log("je suis actif");
-  })
-
-  onUnmounted(() => {
-    console.log("je suis inactif");
-  })
 
   function doLogout() {
     doApiLogout();
@@ -24,7 +18,9 @@
 </script>
 
 <template>
-  Chat
+  <the-chat-users />
+  <the-chat-messages />
+  <the-chat-add-form />
   <button @click="doLogout">Logout</button>
 </template>
 
